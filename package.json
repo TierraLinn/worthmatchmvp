@@ -1,0 +1,37 @@
+{
+  "name": "worthmatch",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tools\\node.cmd .\\node_modules\\vite\\bin\\vite.js --host 0.0.0.0",
+    "build": "tools\\node.cmd .\\node_modules\\typescript\\bin\\tsc -b && tools\\node.cmd .\\node_modules\\vite\\bin\\vite.js build",
+    "build:portable": "node ./node_modules/typescript/bin/tsc -b && node ./node_modules/vite/bin/vite.js build",
+    "preview": "tools\\node.cmd .\\node_modules\\vite\\bin\\vite.js preview --host 0.0.0.0",
+    "test": "tools\\node.cmd .\\node_modules\\vitest\\vitest.mjs run",
+    "test:watch": "tools\\node.cmd .\\node_modules\\vitest\\vitest.mjs",
+    "check": "tools\\node.cmd .\\node_modules\\typescript\\bin\\tsc -b && tools\\node.cmd .\\node_modules\\vitest\\vitest.mjs run && tools\\node.cmd .\\node_modules\\vite\\bin\\vite.js build",
+    "deploy:preview": "node ./node_modules/vercel/dist/vc.js --yes",
+    "deploy:prod": "node ./node_modules/vercel/dist/vc.js --yes --prod",
+    "vercel:whoami": "node ./node_modules/vercel/dist/vc.js whoami"
+  },
+  "dependencies": {
+    "framer-motion": "^12.10.0",
+    "lucide-react": "^0.511.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.4.1",
+    "jsdom": "^29.0.2",
+    "typescript": "^5.7.2",
+    "vercel": "^52.0.0",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.9"
+  }
+}
